@@ -15,46 +15,19 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-from PyQt4.QtCore import QDateTime
-
 class ValidationError(Exception):
     pass
 
-class Time:
-
-    def __init__(self, format):
-
-        self.format = format
-
-    def validate(self, value):
-    
-        dateTime = QDateTime.fromString(value, self.format)
-        if dateTime.isValid():
-            return True
-        else:
-            return False
-
-class LonLat:
-
-    def validate(self, value):
-    
-        if len(value) != 2:
-            return False
-        elif not -180.0 <= value[0] <= 180.0:
-            return False
-        elif not -90.0 <= value[1] <= 90.0:
-            return False
-        else:
-            return True
-
 def validate(data, schema):
 
-    validate_dict(data, schema, ())
+    return validate_dict(data, schema, ())
 
 def validate_dict(data, expected, path):
 
     if type(data) != dict:
         raise ValidationError, "Expected a dictionary at %s" % path
+    
+    new_data = {}
 
     for key, expected_value in expected.items():
 
@@ -63,15 +36,17 @@ def validate_dict(data, expected, path):
         except KeyError:
             raise ValidationError, "Missing '%s' entry in schema at %s" % (key, path)
         
-        validate_value(value, expected_value, path + (key,))
+        new_data[key] = validate_value(value, expected_value, path + (key,))
+
+    return new_data
 
 def validate_value(value, expected, path):
 
     if type(expected) == dict:
-        validate_dict(value, expected, path)
+        return validate_dict(value, expected, path)
     
     elif type(expected) == list:
-        validate_list(value, expected, path)
+        return validate_list(value, expected, path)
     
     elif type(expected) == unicode:
         if value != expected:
@@ -94,8 +69,12 @@ def validate_value(value, expected, path):
             raise ValidationError, "Expected float at %s" % path
     
     else:
-        if not expected.validate(value):
+        try:
+            value = expected.validate(value)
+        except ValueError:
             raise ValidationError, "Failed to validate value at %s" % path
+    
+    return value
 
 def validate_list(value, expected, path):
 
@@ -104,6 +83,10 @@ def validate_list(value, expected, path):
     
     # The expected value is a list with one item that specifies the required type.
     expected_item = expected[0]
+    
+    new_list = []
 
     for item in value:
-        validate_value(item, expected_item, path)
+        new_list.append(validate_value(item, expected_item, path))
+
+    return new_list
