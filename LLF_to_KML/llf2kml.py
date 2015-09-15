@@ -31,7 +31,16 @@ def read_file(file_name):
     llf = d.decode(data)
     
     return llf_schema.File().validate(llf)
-    
+
+def write_extended_data_values(properties, extdata, prefix="llf:"):
+
+    for key, value in properties.items():
+        if type(value) == dict:
+            write_extended_data_values(value, extdata, prefix + key + ":")
+        else:
+            data = SubElement(extdata, 'Data')
+            data.set('name', prefix + key)
+            SubElement(data, 'value').text = unicode(value)
 
 if __name__ == "__main__":
 
@@ -56,44 +65,60 @@ if __name__ == "__main__":
     # Obtain information about each timestep in the file.
     for timestep in llf:
     
+        # Collect all the polygons for each timestep.
+        output_polygons = {}
+        valid = timestep['valid']
+        
         for feature in timestep['forecast']:
+        
+            polygons = feature['geometry']['coordinates']
+            for coords in polygons:
+            
+                polygon = []
+                for coord in coords:
+                    polygon.append((coord.x(), coord.y()))
+                polygon = tuple(polygon)
+
+                properties = output_polygons.get(polygon, {})
+                properties.update(feature['properties']['parameters'])
+                output_polygons[polygon] = properties
+        
+        for coords, properties in output_polygons.items():
         
             folder = SubElement(doc, 'Folder')
             name = SubElement(folder, 'name')
             name.text = ''
-            valid = timestep['valid']
             
             timespan = SubElement(folder, 'TimeSpan')
             begin = SubElement(timespan, 'begin')
-            begin.text = unicode(feature['properties']['valid']['from'].toString("yyyy-MM-ddThh:mm:ssZ"))
+            begin.text = unicode(valid[0].toString("yyyy-MM-ddThh:mm:ssZ"))
             end = SubElement(timespan, 'end')
-            end.text = unicode(feature['properties']['valid']['to'].toString("yyyy-MM-ddThh:mm:ssZ"))
+            end.text = unicode(valid[1].toString("yyyy-MM-ddThh:mm:ssZ"))
             
-            polygons = feature['geometry']['coordinates']
-            for coords in polygons:
+            placemark = SubElement(folder, 'Placemark')
+            SubElement(placemark, 'name').text = ''
+            SubElement(placemark, 'description').text = ''
             
-                placemark = SubElement(folder, 'Placemark')
-                SubElement(placemark, 'name').text = feature['properties']['parameterGroup']
-                SubElement(placemark, 'description').text = ''
-                
-                extdata = SubElement(placemark, 'ExtendedData')
-                data = SubElement(extdata, 'Data')
-                data.set('name', u'met:objectType')
-                SubElement(data, 'value').text = 'PolyLine'
-                
-                polygon = SubElement(placemark, 'Polygon')
-                SubElement(polygon, 'tessellate').text = '1'
-                
-                boundary = SubElement(polygon, 'outerBoundaryIs')
-                ring = SubElement(boundary, 'LinearRing')
-                coordinates = SubElement(ring, 'coordinates')
-                text = u''
-                
-                for coord in coords:
-                    line = u"%f,%f,0\n" % (coord.x(), coord.y())
-                    text += line
-                
-                coordinates.text = text
+            extdata = SubElement(placemark, 'ExtendedData')
+            data = SubElement(extdata, 'Data')
+            data.set('name', u'met:objectType')
+            SubElement(data, 'value').text = 'PolyLine'
+
+            write_extended_data_values(properties, extdata)
+            
+            polygon = SubElement(placemark, 'Polygon')
+            SubElement(polygon, 'tessellate').text = '1'
+            
+            boundary = SubElement(polygon, 'outerBoundaryIs')
+            ring = SubElement(boundary, 'LinearRing')
+            coordinates = SubElement(ring, 'coordinates')
+            text = u''
+            
+            for coord in coords:
+                line = u"%f,%f,0\n" % coord
+                text += line
+            
+            coordinates.text = text
     
     if not kml_file:
         f = sys.stdout

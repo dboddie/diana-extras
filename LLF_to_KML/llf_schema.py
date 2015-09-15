@@ -106,18 +106,13 @@ class AnyEntries:
 
 ISODate = Time("yyyy-MM-ddTHH:mm:ss.zzzZ")
 
-class Properties:
+class SchemaElement:
 
-    schema = {
-        "timeStep": ISODate,
-        "refTime": ISODate,
-        "parameterGroup": unicode,
-        "valid": {
-            "to": ISODate,
-            "from": ISODate
-            }
-        }
-    
+    def __init__(self, schema):
+        self.schema = schema
+
+class Properties(SchemaElement):
+
     parameterGroups = {
         "vis-cld": {
             "presentweather": {
@@ -230,40 +225,22 @@ class Properties:
     
     def validate(self, value):
     
-        completed = schema.validate(value, Properties.schema)
+        completed = schema.validate(value, self.schema)
         
         paraSchema = Properties.parameterGroups[value["parameterGroup"]]
         completed["parameters"] = schema.validate(value["parameters"], paraSchema)
         
         return LLF_Properties(completed)
 
-class Feature:
-
-    schema = {
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [
-                [LonLat()]
-                ]
-            },
-        "type": "Feature",
-        "properties": Properties()
-    }
-    
-    def validate(self, value):
-
-        return LLF_Feature(schema.validate(value, Feature.schema))
-
-class Forecast:
-
-    schema = {
-        "type": "FeatureCollection",
-        "features": [Feature()]
-        }
+class Feature(SchemaElement):
 
     def validate(self, value):
+        return LLF_Feature(schema.validate(value, self.schema))
 
-        return LLF_Forecast(schema.validate(value, Forecast.schema))
+class Forecast(SchemaElement):
+
+    def validate(self, value):
+        return LLF_Forecast(schema.validate(value, self.schema))
 
 class File:
 
@@ -279,12 +256,30 @@ class File:
             "type":   unicode,
             "areas":  [unicode]
             },
-        "timesteps": [
-            {
-                "range":    [int],
-                "valid":    [ISODate],
-                "forecast": Forecast()
-            }]
+        
+        "timesteps": [ {
+            "range":    [int],
+            "valid":    [ISODate],
+            "forecast": Forecast( {
+                "type": "FeatureCollection",
+                "features": [ Feature( {
+                    "geometry": {
+                        "type": "Polygon",
+                        "coordinates": [ [LonLat()] ]
+                        },
+                    "type": "Feature",
+                    "properties": Properties( {
+                        "timeStep": ISODate,
+                        "refTime": ISODate,
+                        "parameterGroup": unicode,
+                        "valid": {
+                            "to": ISODate,
+                            "from": ISODate
+                            }
+                        } )
+                    } ) ]
+                } )
+            } ]
         }
 
     def validate(self, value):
