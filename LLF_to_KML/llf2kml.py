@@ -35,12 +35,17 @@ def read_file(file_name):
 
 if __name__ == "__main__":
 
-    if len(sys.argv) != 3:
+    if not 2 <= len(sys.argv) <= 3:
 
-        sys.stderr.write("Usage: %s <LLF GeoJSON file> <KML file for Diana>\n" % sys.argv[0])
+        sys.stderr.write("Usage: %s <LLF GeoJSON file> [KML file for Diana]\n" % sys.argv[0])
         sys.exit(1)
     
-    geojson_file, kml_file = sys.argv[1:3]
+    geojson_file = sys.argv[1]
+    
+    if len(sys.argv) == 3:
+        kml_file = sys.argv[2]
+    else:
+        kml_file = None
 
     llf = read_file(geojson_file)
 
@@ -55,7 +60,7 @@ if __name__ == "__main__":
         
             folder = SubElement(doc, 'Folder')
             name = SubElement(folder, 'name')
-            name.text = 'xxx'
+            name.text = ''
             valid = timestep['valid']
             
             timespan = SubElement(folder, 'TimeSpan')
@@ -90,7 +95,7 @@ if __name__ == "__main__":
                 
                 coordinates.text = text
     
-    if kml_file == '-':
+    if not kml_file:
         f = sys.stdout
     else:
         f = open(kml_file, 'wb')

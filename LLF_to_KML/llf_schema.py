@@ -67,7 +67,175 @@ class LonLat:
         else:
             return QPointF(value[0], value[1])
 
+class IntRange:
+
+    def __init__(self, minimum, maximum):
+        self.minimum = minimum
+        self.maximum = maximum
+    
+    def validate(self, value):
+    
+        if not self.minimum <= value <= self.maximum:
+            raise ValueError
+        else:
+            return value
+
+class OneOf:
+
+    def __init__(self, choices):
+        self.choices = choices
+    
+    def validate(self, value):
+    
+        if value in self.choices:
+            return value
+        else:
+            raise ValueError
+
+class AnyEntries:
+
+    def __init__(self, expected_dict):
+        self.expected_dict = expected_dict
+    
+    def validate(self, value_dict):
+    
+        for key, value in value_dict.items():
+            schema.validate(value, self.expected_dict)
+        
+        return value_dict
+
 ISODate = Time("yyyy-MM-ddTHH:mm:ss.zzzZ")
+
+class Properties:
+
+    schema = {
+        "timeStep": ISODate,
+        "refTime": ISODate,
+        "parameterGroup": unicode,
+        "valid": {
+            "to": ISODate,
+            "from": ISODate
+            }
+        }
+    
+    parameterGroups = {
+        "vis-cld": {
+            "presentweather": {
+                "local": [unicode],
+                "general": [unicode]
+                },
+            "cloudbase": {
+                "local": {
+                    "to": IntRange(0, 9999),
+                    "from": IntRange(0, 9999)
+                    },
+                "general": {
+                    "to": IntRange(0, 9999),
+                    "from": IntRange(0, 9999)
+                    }
+                },
+            "visibility": {
+                "local": {
+                    "to": IntRange(0, 9999),
+                    "from": IntRange(0, 9999)
+                    },
+                "general": {
+                    "to": IntRange(0, 9999),
+                    "from": IntRange(0, 9999)
+                    }
+                }
+            },
+        "ctop": {
+            "cloudtop": {
+                "from": IntRange(0, 99),
+                "to": IntRange(0, 9999),
+                },
+            "turbulence": {
+                "from": OneOf(["FBL", "MOD", "SEV"]),
+                "to": OneOf(["FBL", "MOD", "SEV"]),
+                }
+            },
+        "zero": {
+            "freezinglvl": {
+                "from": IntRange(0, 125),
+                "to": IntRange(0, 125),
+                },
+            "neglayer": {
+                "from": IntRange(0, 125),
+                "to": IntRange(0, 125),
+                }
+            },
+        "ice": {
+            "icinglvl": {
+                "from": IntRange(0, 99),
+                "to": IntRange(0, 9999),
+                },
+            "intensity": {
+                "from": OneOf(["FBL", "MOD", "SEV"]),
+                "to": OneOf(["FBL", "MOD", "SEV"]),
+                }
+            },
+        "hwnd-tmp": {
+            "highwind": AnyEntries({
+                "FL100": {
+                    "windspeed": IntRange(0, 99),
+                    "winddirection": IntRange(0, 360)
+                    },
+                "FL050": {
+                    "windspeed": IntRange(0, 99),
+                    "winddirection": IntRange(0, 360)
+                    },
+                "2000ft": {
+                    "windspeed": IntRange(0, 99),
+                    "winddirection": IntRange(0, 360)
+                    }
+                }),
+            "temperature": AnyEntries({
+                "FL100": {
+                    "temp": IntRange(-40, 50)
+                    },
+                "FL050": {
+                    "temp": IntRange(-40, 50)
+                    },
+                "2000ft": {
+                    "temp": IntRange(-40, 50)
+                    }
+                })
+            },
+        "wnd": {
+            "windspeed": {
+                "from": IntRange(0, 99),
+                "to": IntRange(0, 99),
+                },
+            "winddirection": IntRange(0, 360)
+            },
+        "gust": {
+            "from": IntRange(0, 99),
+            "to": IntRange(0, 99),
+            },
+        "turb": {
+            "turbulence": {
+                "from": IntRange(0, 125),
+                "to": IntRange(0, 125),
+                },
+            "intensity": {
+                "from": OneOf(["FBL", "MOD", "SEV"]),
+                "to": OneOf(["FBL", "MOD", "SEV"]),
+                }
+            },
+        "qnh": {
+            "pressure": IntRange(0, 1000)
+            }
+        }
+    
+    def validate(self, value):
+    
+        completed = schema.validate(value, Properties.schema)
+        
+        paraSchema = Properties.parameterGroups[value["parameterGroup"]]
+        completed["parameters"] = schema.validate(value["parameters"], paraSchema)
+        
+        return LLF_Properties(completed)
 
 class Feature:
 
@@ -79,17 +247,7 @@ class Feature:
                 ]
             },
         "type": "Feature",
-        "properties": {
-            "timeStep": ISODate,
-            "refTime": ISODate,
-            "parameterGroup": unicode,
-            "valid": {
-                "to": ISODate,
-                "from": ISODate
-                },
-            "parameters": { # Do not validate - depends on product type.
-                }
-            },
+        "properties": Properties()
     }
     
     def validate(self, value):
@@ -162,6 +320,10 @@ class LLF_Container(LLF_Element):
 
         return len(self.contents[self.container_attr])
 
+class LLF_Properties(LLF_Element):
+
+    pass
+
 class LLF_Feature(LLF_Element):
 
     pass
@@ -173,4 +335,3 @@ class LLF_Forecast(LLF_Container):
 class LLF_File(LLF_Container):
 
     container_attr = "timesteps"
-

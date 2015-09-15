@@ -18,6 +18,11 @@
 class ValidationError(Exception):
     pass
 
+class Optional:
+
+    def __init__(self, value):
+        self.value = value
+
 def validate(data, schema):
 
     return validate_dict(data, schema, ())
@@ -34,7 +39,10 @@ def validate_dict(data, expected, path):
         try:
             value = data[key]
         except KeyError:
-            raise ValidationError, "Missing '%s' entry in schema at %s" % (key, path)
+            if isinstance(expected_value, Optional):
+                expected_value = expected_value.value
+            else:
+                raise ValidationError, "Missing '%s' entry in schema at %s" % (key, path)
         
         new_data[key] = validate_value(value, expected_value, path + (key,))
 
