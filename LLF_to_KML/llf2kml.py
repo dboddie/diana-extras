@@ -32,7 +32,7 @@ def read_file(file_name):
     
     return llf_schema.File().validate(llf)
 
-def write_extended_data_values(properties, extdata, prefix="llf:"):
+def write_extended_data_values(properties, extdata, prefix):
 
     for key, value in properties.items():
         if type(value) == dict:
@@ -83,6 +83,8 @@ if __name__ == "__main__":
                 properties.update(feature['properties']['parameters'])
                 output_polygons[polygon] = properties
         
+        # Create a folder for each unique polygon in the KML file.
+
         for coords, properties in output_polygons.items():
         
             folder = SubElement(doc, 'Folder')
@@ -103,8 +105,10 @@ if __name__ == "__main__":
             data = SubElement(extdata, 'Data')
             data.set('name', u'met:objectType')
             SubElement(data, 'value').text = 'PolyLine'
-
-            write_extended_data_values(properties, extdata)
+            
+            # Convert the properties associated with this polygon into
+            # extended data values.
+            write_extended_data_values(properties, extdata, "met:llf:")
             
             polygon = SubElement(placemark, 'Polygon')
             SubElement(polygon, 'tessellate').text = '1'
