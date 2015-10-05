@@ -20,8 +20,6 @@ import json, pprint, sys
 from xml.etree.ElementTree import Element, ElementTree, SubElement
 import llf_schema
 
-from PyQt4.QtCore import Qt
-
 def read_file(file_name):
 
     d = json.JSONDecoder()
@@ -121,6 +119,9 @@ if __name__ == "__main__":
             for coord in coords:
                 line = u"%f,%f,0\n" % coord
                 text += line
+            
+            if coords:
+                line = u"%f,%f,0\n" % coords[0]
             
             coordinates.text = text
     
