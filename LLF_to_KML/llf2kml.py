@@ -17,7 +17,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import json, pprint, sys
-from xml.etree.ElementTree import Element, ElementTree, SubElement
+from lxml.etree import Element, ElementTree, SubElement
 import llf_schema
 
 def read_file(file_name):
@@ -106,7 +106,7 @@ if __name__ == "__main__":
             
             # Convert the properties associated with this polygon into
             # extended data values.
-            write_extended_data_values(properties, extdata, "met:llf:")
+            write_extended_data_values(properties, extdata, "met:info:llf:")
             
             polygon = SubElement(placemark, 'Polygon')
             SubElement(polygon, 'tessellate').text = '1'
@@ -130,4 +130,5 @@ if __name__ == "__main__":
     else:
         f = open(kml_file, 'wb')
     
-    ElementTree(kml).write(f, 'utf-8', '<?xml version="1.0" encoding="UTF-8"?>')
+    ElementTree(kml).write(f, encoding='UTF-8', xml_declaration=True, pretty_print=True)
+    sys.exit()
