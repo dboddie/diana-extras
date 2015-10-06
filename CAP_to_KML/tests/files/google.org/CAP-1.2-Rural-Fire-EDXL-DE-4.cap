@@ -1,0 +1,67 @@
+<cap:alert xmlns:cap="urn:oasis:names:tc:emergency:cap:1.2">
+  <cap:identifier>tag:www.rfs.nsw.gov.au2011-10-18:40428</cap:identifier>
+  <cap:sender>webmaster@rfs.nsw.gov.au</cap:sender>
+  <cap:sent>2011-10-17T05:15:00-00:00</cap:sent>
+  <cap:status>Actual</cap:status>
+  <cap:msgType>Alert</cap:msgType>
+  <cap:scope>Public</cap:scope>
+  <cap:info>
+    <cap:language>en-AU</cap:language>
+    <cap:category>Fire</cap:category>
+    <cap:event>Grassfire</cap:event>
+    <cap:urgency>Expected</cap:urgency>
+    <cap:severity>Moderate</cap:severity>
+    <cap:certainty>Observed</cap:certainty>
+    <cap:eventCode>
+      <cap:valueName>CDNevent</cap:valueName>
+      <cap:value>grassFire</cap:value>
+    </cap:eventCode>
+    <cap:expires>2011-10-18T05:15:00-00:00</cap:expires>
+    <cap:senderName>NSW Rural Fire Service</cap:senderName>
+    <cap:headline>Border Downs</cap:headline>
+    <cap:description>ALERT LEVEL: Advice&lt;br /&gt;LOCATION: North west of Broken Hill&lt;br /&gt;COUNCIL AREA: Unincorporated&lt;br /&gt;STATUS: Under Control&lt;br /&gt;TYPE: Grass fire&lt;br /&gt;SIZE: 7000 ha&lt;br /&gt;RESPONSIBLE AGENCY: Rural Fire Service&lt;br /&gt;UPDATED: 17 Oct 2011 16:15</cap:description>
+    <cap:instruction>A fire has started. There is no immediate danger. Stay up to date in case the situation changes.</cap:instruction>
+    <cap:web>http://www.rfs.nsw.gov.au/dsp_content.cfm?cat_id=683</cap:web>
+    <cap:parameter>
+      <cap:valueName>FuelType</cap:valueName>
+      <cap:value>Forest</cap:value>
+    </cap:parameter>
+    <cap:parameter>
+      <cap:valueName>Location</cap:valueName>
+      <cap:value>North west of Broken Hill</cap:value>
+    </cap:parameter>
+    <cap:parameter>
+      <cap:valueName>FireDangerClass</cap:valueName>
+      <cap:value>1</cap:value>
+    </cap:parameter>
+    <cap:parameter>
+      <cap:valueName>Status</cap:valueName>
+      <cap:value>Under Control</cap:value>
+    </cap:parameter>
+    <cap:parameter>
+      <cap:valueName>Fireground</cap:valueName>
+      <cap:value>7000 ha</cap:value>
+    </cap:parameter>
+    <cap:parameter>
+      <cap:valueName>AllocatedResources</cap:valueName>
+      <cap:value />
+    </cap:parameter>
+    <cap:parameter>
+      <cap:valueName>ControlAuthority</cap:valueName>
+      <cap:value>Rural Fire Service</cap:value>
+    </cap:parameter>
+    <cap:resource>
+      <cap:resourceDesc>map</cap:resourceDesc>
+      <cap:mimeType>text/html</cap:mimeType>
+      <cap:uri>http://www.rfs.nsw.gov.au/dsp_content.cfm?CAT_ID=683</cap:uri>
+    </cap:resource>
+    <cap:area>
+      <cap:areaDesc>Border Downs</cap:areaDesc>
+      <cap:circle>-31.4023,141.0412 0.0</cap:circle>
+      <cap:geocode>
+        <cap:valueName>ISO 3166-2</cap:valueName>
+        <cap:value>AU-NSW</cap:value>
+      </cap:geocode>
+    </cap:area>
+  </cap:info>
+</cap:alert>

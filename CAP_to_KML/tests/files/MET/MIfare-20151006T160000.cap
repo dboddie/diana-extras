@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+  <identifier>16</identifier>
+  <sender>helpdesk@met.no</sender>
+  <sent>2015-10-06T18:00:00-00:00</sent>
+  <status>Actual</status>
+  <msgType>Alert</msgType>
+  <scope>Public</scope>
+  <note>Nedbør alert for Norway issued by the Norwegian Meteorological Institute</note>
+  <info>
+    <language>no</language>
+    <category>Met</category>
+    <event>Alice</event>
+    <urgency>Future</urgency>
+    <severity>Moderate</severity>
+    <certainty>Likely</certainty>
+    <effective>2015-10-06T16:00:00-00:00</effective>
+    <expires>2015-10-09T16:00:00-00:00</expires>
+    <senderName>IT-utvikling</senderName>
+    <description>Nedbør</description>
+    <instruction/>
+    <web>http://www.yr.no</web>
+    <area>
+      <areaDesc>Sør-Troms</areaDesc>
+      <polygon>68.533167,18.133167
+68.599833,18.033167
+68.599833,17.533167
+68.550000,17.316667
+68.550000,17.216667
+68.583167,16.866667
+68.516667,16.733167
+68.500000,16.566667
+68.533167,16.549833
+68.550000,16.616667
+68.566667,16.566667
+68.566667,16.466667
+68.633167,16.233167
+68.566667,16.033167
+68.599833,15.949833
+68.533167,15.866667
+68.500000,15.766667
+68.449833,15.649833
+68.466667,15.616667
+68.500000,15.683167
+68.533167,15.616667
+68.683167,15.733167
+68.766667,15.716667
+68.833167,15.766667
+68.949833,15.866667
+69.033167,16.049833
+69.233167,16.333167
+69.425667,16.458667
+69.687167,17.759833
+69.650000,17.799833
+69.516667,18.100000
+69.483167,18.316667
+69.383167,18.500000
+69.250000,18.766667
+69.050000,19.366667
+69.050000,20.116667
+68.916667,20.299833
+68.800000,20.316667
+68.666667,20.216667
+68.550000,19.966667
+68.483167,20.216667
+68.416667,20.066667
+68.349833,19.916667
+68.383167,19.733167
+68.500000,18.966667
+68.500000,18.649833
+68.583167,18.416667
+68.533167,18.133167
+</polygon>
+      <geocode>
+        <valueName>TED</valueName>
+        <value>9007</value>
+      </geocode>
+    </area>
+  </info>
+</alert>
