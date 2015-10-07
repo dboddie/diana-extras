@@ -1,0 +1,8 @@
+These files were provided by DMI and processed using the following commands
+to fix typographical errors:
+
+sed -i -r s/vaild/valid/ tests/files/EKCH_*
+sed -i -r s/pressent/present/ tests/files/EKCH_*
+sed -i -r s/iceing/icing/ tests/files/EKCH_*
+
+The EKCH_zero_150902_12.json appears to be completely invalid.
