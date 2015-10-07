@@ -15,19 +15,37 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+"""A module providing validation functions that can be used to describe the
+expected contents of data structures. This can be especially useful when
+trying to describe the contents of dictionaries obtained from JSON files
+when the full descriptive power of JSON-Schema is not needed.
+"""
+
 class ValidationError(Exception):
+    """Indicates an error in validation."""
     pass
 
 class Optional:
-
+    """Describes an optional element in the description of a data structure."""
+    
     def __init__(self, value):
         self.value = value
 
 def validate(data, schema):
+    """Validates the given data dictionary against the specified schema.
+    
+    Returns the populated dictionary if successful or raises a ValidationError
+    exception if validation fails."""
 
     return validate_dict(data, schema, ())
 
 def validate_dict(data, expected, path):
+    """Validates the given data dictionary against the expected description on the
+    specified path of the expected description in a larger schema.
+
+    Returns the populated dictionary if successful or raises a ValidationError
+    exception if not.
+    """
 
     if type(data) != dict:
         raise ValidationError, "Expected a dictionary at %s" % path
@@ -49,7 +67,13 @@ def validate_dict(data, expected, path):
     return new_data
 
 def validate_value(value, expected, path):
-
+    """Validates the given value against an expected value at the specified path
+    of the expected value in a larger schema. This general purpose function calls
+    the appropriate validation function for the value's data type.
+    
+    Returns the value if it is valid or raises a ValidationError exception if
+    not."""
+    
     if type(expected) == dict:
         return validate_dict(value, expected, path)
     
@@ -85,6 +109,11 @@ def validate_value(value, expected, path):
     return value
 
 def validate_list(value, expected, path):
+    """Validates the given list value against an expected list at the specified
+    path of the expected list in a larger schema.
+
+    Returns the populated list if successful or raises a ValidationError exception
+    if not."""
 
     if type(value) != list:
         raise ValidationError, "Expected a list at %s" % path

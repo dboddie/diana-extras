@@ -16,12 +16,28 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+"""Converts LLF GeoJSON files to KML files for use with Diana (http://diana.met.no).
+
+  Usage: %s <LLF GeoJSON file> [KML file for Diana]
+
+Note that this performs an incomplete translation of the contents of the LLF
+GeoJSON files since it uses the incomplete specification supplied at the time
+of writing.
+
+This script uses the llf_schema module to perform validation of LLF GeoJSON
+files.
+"""
+
 import json, pprint, sys
 from lxml.etree import Element, ElementTree, SubElement
 import llf_schema
 
 def read_file(file_name):
 
+    """Reads the GeoJSON file with the given file_name, validates it and returns
+    an object representing the file contents. Raises an exception if the validation
+    fails."""
+    
     d = json.JSONDecoder()
     data = open(file_name, "rb").read()
     
@@ -32,6 +48,10 @@ def read_file(file_name):
 
 def write_extended_data_values(properties, extdata, prefix):
 
+    """Writes the contents of the properties dictionary to the XML element,
+    extdata, containing the extended data values, giving each piece of data
+    the specified prefix string."""
+    
     for key, value in properties.items():
         if type(value) == dict:
             write_extended_data_values(value, extdata, prefix + key + ":")

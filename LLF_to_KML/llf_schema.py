@@ -15,6 +15,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+"""Describes data types used in the structure of LLF GeoJSON files.
+
+This module uses functions in the schema module to validate the contents of
+dictionaries obtained from GeoJSON files.
+"""
+
 import schema
 
 class LLF_Error(Exception):
@@ -244,6 +250,14 @@ class Forecast(SchemaElement):
 
 class File:
 
+    """Represents an LLF GeoJSON file, describing the expected structure and
+    contents of this kind of file.
+
+    To validate JSON data against this description, first decode it to a
+    dictionary then call the validate method on an instance of this class,
+    passing the dictionary as an argument.
+    """
+
     schema = {
         "header": {
             "status": unicode,
@@ -283,7 +297,14 @@ class File:
         }
 
     def validate(self, value):
+    
+        """Validates the Python dictionary, value, against the expected structure
+        and contents of an LLF GeoJSON file, returning an LLF_File instance if
+        successful or raising an exception if not.
+        """
 
+        # Note that the schema object here refers to the module, not the
+        # attribute of this class.
         return LLF_File(schema.validate(value, File.schema))
 
 # Containers for validated data
@@ -328,5 +349,8 @@ class LLF_Forecast(LLF_Container):
     container_attr = "features"
 
 class LLF_File(LLF_Container):
+
+    """Represents a valid LLF GeoJSON file whose contents can be accessed
+    via the contents attribute or using dictionary-like methods."""
 
     container_attr = "timesteps"
