@@ -32,6 +32,9 @@ import json, pprint, sys
 from lxml.etree import Element, ElementTree, SubElement
 import llf_schema
 
+# Define some common style properties.
+style_properties = {"closed": "true"}
+
 def read_file(file_name):
 
     """Reads the GeoJSON file with the given file_name, validates it and returns
@@ -127,6 +130,8 @@ if __name__ == "__main__":
             # Convert the properties associated with this polygon into
             # extended data values.
             write_extended_data_values(properties, extdata, "met:info:llf:")
+            # Write the common style properties.
+            write_extended_data_values(style_properties, extdata, "met:style:")
             
             polygon = SubElement(placemark, 'Polygon')
             SubElement(polygon, 'tessellate').text = '1'
