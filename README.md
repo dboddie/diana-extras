@@ -15,6 +15,11 @@ LLF_to_KML
 The `llf2kml.py` tool is used to convert Low Level Forecast (LLF) messages into KML files for
 visualisation in Diana.
 
+bdiana-extras
+-------------
+The `bdiana-waiter.py` script is used to run bdiana for each input file copied to a specified
+input directory. The input files are deleted afterwards.
+
 References
 ----------
 

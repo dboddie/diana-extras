@@ -5,7 +5,7 @@
 Monitors the given input directory for new input files, waiting for the
 specified period (in seconds) before checking again. When new input files
 are found, runs the specified bdiana executable and setup file for each of
-the files.
+the files. The input files are deleted after being processed.
 """
 
 import commands, glob, os, sys, time
