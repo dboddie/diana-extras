@@ -20,6 +20,11 @@ bdiana-extras
 The `bdiana-waiter.py` script is used to run bdiana for each input file copied to a specified
 input directory. The input files are deleted afterwards.
 
+testfiles
+---------
+This directory contains input files that may be useful when testing a new installation of
+Diana and bdiana.
+
 References
 ----------
 
