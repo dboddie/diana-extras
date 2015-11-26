@@ -1,0 +1,8 @@
+buffersize=800x800
+output=PNG
+filename=test.png
+
+PLOT
+MAP backcolour=117:199:242 map=Gshhs-Auto contour=on cont.colour=black cont.linewidth=1 cont.linetype=solid cont.zorder=1 land=on land.colour=240:158:92
+AREA proj4string="+proj=ortho +lat_0=60" rectangle=-1500000.000000:1500000.000000:-1250000.000000:1750000.000000
+ENDPLOT

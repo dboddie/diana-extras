@@ -1,0 +1,15 @@
+buffersize=800x800
+output=PNG
+filename=output/AROME-Arctic-latest-T2m.png
+
+<FIELD_FILES>
+m=AROME-Arctic f=http://thredds.met.no/thredds/dodsC/aromearctic/har25_svalbard_latest.nc format=netcdf
+</FIELD_FILES>
+
+PLOT
+MAP backcolour=white map=Gshhs-Auto contour=on cont.colour=black cont.linewidth=1 cont.linetype=solid cont.zorder=1 land=on land.colour=240:158:92
+AREA proj4string="+proj=ortho +lat_0=80" rectangle=-400000.000000:1100000.000000:-750000.000000:750000.000000
+
+FIELD model=AROME-Arctic refhour=12 plot=T.2M vcoord=height vlevel=2m colour=black plottype=contour linetype=solid linewidth=1 base=-10 frame=1 line.interval=2 extreme.type=None extreme.size=1 extreme.radius=1 palettecolours=standard patterns=off table=1 repeat=0 value.label=1 line.smooth=0 field.smooth=0 label.size=1 grid.lines=0 grid.lines.max=0 undef.masking=0 undef.colour=255:255:255:255 undef.linewidth=1 undef.linetype=solid grid.value=0 colour_2=off dim=1 unit=celsius
+
+ENDPLOT
