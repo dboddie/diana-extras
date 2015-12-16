@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+  targetNamespace="http://xml.fmi.fi/namespace/woml/textfct/2012/11/15"
+  xmlns:womltxtfct="http://xml.fmi.fi/namespace/woml/textfct/2012/11/15"
+  xmlns:womlcore="http://xml.fmi.fi/namespace/woml/core/2012/11/15"
+    xmlns="http://www.w3.org/2001/XMLSchema" 
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:sch="http://www.ascc.net/xml/schematron" 
+    elementFormDefault="qualified" 
+    version="1.0">
+    
+    <annotation>
+        <appinfo>
+            <sch:title>Schematron validation</sch:title>
+            <sch:ns prefix="xlink" uri="http://www.w3.org/1999/xlink" />
+            <sch:pattern name="Check either href or content not both">
+                <sch:rule abstract="true" id="hrefOrContent">
+                    <sch:report test="@xlink:href and (*|text())"
+                        >Property element may not carry both a reference to an object and contain an object.</sch:report>
+                    <sch:assert test="@xlink:href | (*|text())"
+                        >Property element must either carry a reference to an object or contain an object.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </appinfo>
+        <documentation>
+            Geospatial text forecast object objects as GML 3.2 Features.                
+            Author: Ilkka Rinne / FMI 2011.
+        </documentation>
+    </annotation>
+    
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd" />
+    <import namespace="http://xml.fmi.fi/namespace/woml/core/2012/11/15" schemaLocation="http://xml.fmi.fi/schema/woml/core/2012/11/15/woml-core.xsd" />
+
+    <include schemaLocation="woml-warnings.xsd"/>
+  
+    <!-- ========================================================================================== -->
+    <element name="TextForecastArea" type="womltxtfct:TextForecastAreaType"
+        substitutionGroup="womlcore:AbstractSurfaceObject" />
+    <!-- ========================================================================================== -->
+    <complexType name="TextForecastAreaType">
+        <annotation>
+            <documentation>
+                <html:div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Textual weather forecast for the given area with one or more semantically divided sections
+                        (rain, wind, temperature conditions and so on).
+                        Forecast target area is modelled as continuous patch of abstract earth surface (without topology)
+                        defined by an exterior Ring and 0..n interior Rings ("holes").</p>
+                    
+                    
+                    <p>Text forecast areas may contain 0..n inner areas with different qualities. These area are defined by
+                        using innerArea element which is a property containing or referring to
+                        another TextForecastArea object. The exterior of the contained
+                        area object must be completely inside the exterior
+                        and not even partly cover the area inside any of the interior Rings
+                        of the parent object. If a value for any of the qualities is not
+                        given, it is assumed to be the same as in its parent.</p>
+                </html:div>
+            </documentation>
+        </annotation>
+        <complexContent>
+            <extension base="womlcore:AbstractSurfaceObjectType">
+                <sequence>
+                    <element name="forecastTime" type="dateTime"
+                    minOccurs="1" maxOccurs="1" />
+                    <element name="section" type="womltxtfct:ForecastTextSectionPropertyType" minOccurs="1" maxOccurs="unbounded"/>
+                    <element name="innerArea" type="womltxtfct:TextForecastAreaPropertyType"
+                    minOccurs="0" maxOccurs="unbounded" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <!-- ========================================================================================== -->
+    <element name="textForecastAreaProperty" type="womltxtfct:TextForecastAreaPropertyType" />
+    <!-- ========================================================================================== -->
+    <complexType name="TextForecastAreaPropertyType">
+        <annotation>
+            <documentation>To be used when using this object type as property of n GML object
+                type according to the GML object-property-association model (it is not allowed for
+                GML Objects to contain other GML Objects as direct children). Enables referencing to
+                an existing object using xlink:href attribute.</documentation>
+        </annotation>
+        
+        <sequence minOccurs="0">
+            <element ref="womltxtfct:TextForecastArea" />
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup" />
+    </complexType>
+    
+    <!-- ================================================================= -->
+    <element name="ForecastTextSection" type="womltxtfct:ForecastTextSectionType"
+        substitutionGroup="gml:AbstractGML" />
+    <!-- ================================================================= -->
+    <complexType name="ForecastTextSectionType">
+        <annotation>
+            <documentation>
+                One section of textual weather forecast.
+                "title" is a localized presentation name for the section, one for each of the supported languages.
+                
+                "content" is the textual content of this section, one for each of the supported languages.
+                
+                "context" is a section-specific code for specifying the target of the conditions
+                  described in this section, like "sea", "coast" or "lakes". For warnigs, this could be
+                  used to separate different warning types (road weather, forest fire, rain warnings etc.).
+                
+                "audience" is a code for describing the intended target audience, like "general-public".
+                
+                "referenceData" may be used to point into more detailed data source connected to this
+                  the conditions described in this section in textual form.
+            </documentation>
+        </annotation>
+        <complexContent>
+            <extension base="gml:AbstractGMLType">
+                <sequence>
+                    <element name="title" type="womlcore:shortLocalizedStringType" minOccurs="0" maxOccurs="unbounded"/>
+                    <element name="effectiveFrom" type="dateTime" minOccurs="0"/>
+                    <element name="effectiveUntil" type="dateTime" minOccurs="0"/>
+                    <element name="textualContent" type="womltxtfct:TextContentWithOriginType" minOccurs="0" maxOccurs="unbounded"/>
+                    <element name="context" type="gml:CodeType" minOccurs="0" maxOccurs="1"/>                                           
+                    <element name="audience" type="gml:CodeType" minOccurs="0" maxOccurs="unbounded"/>
+                    <element name="referenceData" type="womlcore:DataSourceReferencePropertyType" 
+                        minOccurs="0" maxOccurs="unbounded"/>
+                    
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <!-- ================================================================================= -->
+    <element name="forecastTextSectionProperty" type="womltxtfct:ForecastTextSectionPropertyType">
+        <annotation>
+            <appinfo>
+                <sch:pattern name="refAndContent co-occurence prohibited">
+                    <sch:rule context="womlcore:forecastTextSectionProperty">
+                        <sch:extends rule="hrefOrContent" />
+                    </sch:rule>
+                </sch:pattern>
+            </appinfo>
+        </annotation>
+    </element>
+    <!-- ================================================================================= -->
+    <complexType name="ForecastTextSectionPropertyType">
+        <annotation>
+            <documentation>To be used when using this object type as property of n GML object
+                type according to the GML object-property-association model (it is not allowed for
+                GML Objects to contain other GML Objects as direct children). Enables referencing to
+                an existing object using xlink:href attribute.</documentation>
+        </annotation>
+        <sequence minOccurs="0">
+            <element ref="womltxtfct:ForecastTextSection" />
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup" />
+    </complexType>
+    
+    <!-- ================================================================= -->
+    <element name="TemperatureTextSection" type="womltxtfct:TemperatureTextSectionType"
+        substitutionGroup="womltxtfct:ForecastTextSection" />
+    <!-- ================================================================= -->
+    <complexType name="TemperatureTextSectionType">
+        <complexContent>
+            <extension base="womltxtfct:ForecastTextSectionType"/>
+        </complexContent>
+    </complexType>
+    
+    <!-- ================================================================= -->
+    <element name="RainTextSection" type="womltxtfct:RainTextSectionType"
+        substitutionGroup="womltxtfct:ForecastTextSection" />
+    <!-- ================================================================= -->
+    <complexType name="RainTextSectionType">
+        <complexContent>
+            <extension base="womltxtfct:ForecastTextSectionType"/>
+        </complexContent>
+    </complexType>
+    
+    <!-- ================================================================= -->
+    <element name="WindTextSection" type="womltxtfct:WindTextSectionType"
+        substitutionGroup="womltxtfct:ForecastTextSection" />
+    <!-- ================================================================= -->
+    <complexType name="WindTextSectionType">
+        <complexContent>
+            <extension base="womltxtfct:ForecastTextSectionType"/>            
+        </complexContent>
+    </complexType>
+    
+    <!-- ================================================================= -->
+    <element name="CloudinessTextSection" type="womltxtfct:CloudinessTextSectionType"
+        substitutionGroup="womltxtfct:ForecastTextSection" />
+    <!-- ================================================================= -->
+    <complexType name="CloudinessTextSectionType">
+        <complexContent>
+            <extension base="womltxtfct:ForecastTextSectionType"/>
+        </complexContent>
+    </complexType>
+
+  
+    <complexType name="TextContentWithOriginType">
+      <simpleContent>
+        <extension base="womlcore:longLocalizedStringType">
+          <attribute name="origin" default="manual">
+            <simpleType>
+              <restriction base="string">
+                <enumeration value="machine-generated">
+                  <annotation>
+                    <documentation>The text value given is generated automatically using a computer program</documentation>
+                  </annotation>
+                </enumeration>
+                <enumeration value="manual">
+                  <annotation>
+                    <documentation>The text value has been manually written or edited by a human editor</documentation>
+                  </annotation>
+                </enumeration>
+              </restriction>
+            </simpleType>
+          </attribute>
+        </extension>
+      </simpleContent>
+    </complexType>
+</schema>

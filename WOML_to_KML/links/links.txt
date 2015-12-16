@@ -1,0 +1,11 @@
+http://xml.fmi.fi/schema/woml/core/2012/11/15/woml-common.xsd
+http://xml.fmi.fi/schema/woml/core/2012/11/15/woml-core.xsd
+http://xml.fmi.fi/schema/woml/swo/2011/11/15/woml-cloud.xsd
+http://xml.fmi.fi/schema/woml/swo/2011/11/15/woml-front.xsd
+http://xml.fmi.fi/schema/woml/swo/2011/11/15/woml-precipitation.xsd
+http://xml.fmi.fi/schema/woml/swo/2011/11/15/woml-pressure.xsd
+http://xml.fmi.fi/schema/woml/swo/2011/11/15/woml-swo.xsd
+http://xml.fmi.fi/schema/woml/swo/2011/11/15/woml-symbol.xsd
+http://xml.fmi.fi/schema/woml/textfct/2012/11/15/woml-textfct.xsd
+http://xml.fmi.fi/schema/woml/textfct/2012/11/15/woml-warnings.xsd
+http://xml.fmi.fi/schema/woml/textfct/2012/11/15/examples/severe-weather-forecast_example.xml

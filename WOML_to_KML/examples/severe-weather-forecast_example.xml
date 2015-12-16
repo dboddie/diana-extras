@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<txtfct:SevereWeatherForecast
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dsig="http://www.w3.org/2000/09/xmldsig#"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:woml="http://xml.fmi.fi/namespace/woml/core/2012/11/15"
+  xmlns:txtfct="http://xml.fmi.fi/namespace/woml/textfct/2012/11/15"
+  xmlns:womlqty="http://xml.fmi.fi/namespace/woml/quantity/2012/11/15"
+  xsi:schemaLocation="http://xml.fmi.fi/namespace/woml/textfct/2012/11/15 ../woml-textfct.xsd
+  http://xml.fmi.fi/namespace/woml/quantity/2012/11/15 http://xml.fmi.fi/schema/woml/quantity/2012/11/15/woml-quantity.xsd"
+  gml:id="fct-1">
+  
+  <gml:boundedBy>
+    <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+      <!-- lat, lon -->
+      <gml:lowerCorner>63.1945 -7.6639</gml:lowerCorner>
+      <gml:upperCorner>69.6897 11.3687</gml:upperCorner>
+    </gml:Envelope>
+  </gml:boundedBy>
+ 
+  <woml:member>
+    <txtfct:SevereWeatherWarning gml:id="warning-1">
+      <woml:creationTime>2012-11-16T15:59:00Z</woml:creationTime>
+                
+      <txtfct:controlSurface>        
+        <gml:MultiSurface gml:id="ms-1" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+          <gml:surfaceMember>
+            <gml:Polygon gml:id="pl-1">
+              <gml:exterior>
+                <gml:Ring>
+                  <gml:curveMember>
+                    <gml:Curve gml:id="curve-1">
+                      <gml:segments>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.1945 -7.6639 63.2023 -7.401 63.2572 -7.2757 63.2772 -7.1757</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.2772 -7.1757 63.3597 -6.6893 63.3032 -7.0757 63.3397 -6.6993</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.3397 -6.6993 63.4419 -6.2062 63.3797 -6.6693 63.4319 -6.4062</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.4319 -6.4062 63.5236 -5.7283 63.4819 -6.0062 63.5036 -5.5283</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                      </gml:segments>
+                    </gml:Curve>
+                  </gml:curveMember>
+                </gml:Ring>
+              </gml:exterior>
+            </gml:Polygon>
+          </gml:surfaceMember>
+          <gml:surfaceMember>
+            <gml:Polygon gml:id="pl-2">
+              <gml:exterior>
+                <gml:Ring>
+                  <gml:curveMember>
+                    <gml:Curve gml:id="curve-2">
+                      <gml:segments>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.1945 -7.6639 63.2023 -7.401 63.2572 -7.2757 63.2772 -7.1757</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.2772 -7.1757 63.3597 -6.6893 63.3032 -7.0757 63.3397 -6.6993</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.3397 -6.6993 63.4419 -6.2062 63.3797 -6.6693 63.4319 -6.4062</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.4319 -6.4062 63.5236 -5.7283 63.4819 -6.0062 63.5036 -5.5283</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                      </gml:segments>
+                    </gml:Curve>
+                  </gml:curveMember>
+                </gml:Ring>
+              </gml:exterior>
+            </gml:Polygon>
+          </gml:surfaceMember>
+          <gml:surfaceMember>
+            <gml:Polygon gml:id="pl-3">
+              <gml:exterior>
+                <gml:Ring>
+                  <gml:curveMember>
+                    <gml:Curve gml:id="curve-3">
+                      <gml:segments>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.1945 -7.6639 63.2023 -7.401 63.2572 -7.2757 63.2772 -7.1757</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.2772 -7.1757 63.3597 -6.6893 63.3032 -7.0757 63.3397 -6.6993</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.3397 -6.6993 63.4419 -6.2062 63.3797 -6.6693 63.4319 -6.4062</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.4319 -6.4062 63.5236 -5.7283 63.4819 -6.0062 63.5036 -5.5283</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                      </gml:segments>
+                    </gml:Curve>
+                  </gml:curveMember>
+                </gml:Ring>
+              </gml:exterior>
+            </gml:Polygon>
+          </gml:surfaceMember>          
+        </gml:MultiSurface>        
+      </txtfct:controlSurface>
+      
+      <txtfct:effectiveFrom>2012-11-16T18:00:00Z</txtfct:effectiveFrom>
+      <txtfct:effectiveUntil>2012-11-17T09:00:00Z</txtfct:effectiveUntil>         
+      <txtfct:severity codeSpace="fmi-weather-warning-severity-levels-traffic-2012-11-15">level-1</txtfct:severity>                        
+      <txtfct:causes codeSpace="fmi-weather-warning-causes-traffic-2012-11-15">snow freezing</txtfct:causes>
+      
+      <!-- In reality at FMI this probability is only given for precautionary warnings -->
+      <txtfct:actualizationProbability>0.90</txtfct:actualizationProbability>
+      
+      
+      <!-- Links to complementary meteorological information follow.
+      
+        In this case they refer to other members within this document,
+        but they could as well refer to external resources,
+        like other forecasts made earlier with the meteorological
+        details, like predicted snowfall or temperature areas.
+       
+        An external link would have the full URL as the value of href:
+        
+      <txtfct:relatedMeteorologicalInfo 
+        xlink:href="http://data.fmi.fi/forecast/2012-11/2012-11-16_08-00_general-weather-forecast-finland.xml#snowfall-1" 
+        xlink:arcrole="http://catalog.fmi.fi/woml/relationship/complement" 
+        xlink:title="Complementary meteorological information"/>
+        
+       -->
+
+      <txtfct:relatedMeteorologicalInfo 
+        xlink:href="#snowfall-1" 
+        xlink:arcrole="http://catalog.fmi.fi/woml/relationship/complement" 
+        xlink:title="Complementary meteorological information"/>
+      
+      <txtfct:relatedMeteorologicalInfo 
+        xlink:href="#wind-1" 
+        xlink:arcrole="http://catalog.fmi.fi/woml/relationship/complement" 
+        xlink:title="Complementary meteorological information"/>
+      
+      <txtfct:relatedMeteorologicalInfo 
+        xlink:href="#road-freezing-1" 
+        xlink:arcrole="http://catalog.fmi.fi/woml/relationship/complement" 
+        xlink:title="Complementary meteorological information"/>
+
+      <!-- It's also allowed to embed the related met. info here without linking:
+      
+      <txtfct:relatedMeteorologicalInfo>
+        <womlqty:ParameterValueSetArea gml:id="foo-1">
+         ....
+        </womlqty:ParameterValueSetArea>
+      </txtfct:relatedMeteorologicalInfo>
+      
+      -->
+    </txtfct:SevereWeatherWarning>
+  </woml:member>
+  
+  <woml:member>
+    <txtfct:SevereWeatherWarning gml:id="warning-2">
+      <woml:creationTime>2012-11-16T15:59:00Z</woml:creationTime>
+      
+      <txtfct:controlSurface>        
+        <gml:MultiSurface gml:id="ms-2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+          <gml:surfaceMember>
+            <gml:Polygon gml:id="pl-4">
+              <gml:exterior>
+                <gml:Ring>
+                  <gml:curveMember>
+                    <gml:Curve gml:id="curve-4">
+                      <gml:segments>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.1945 -7.6639 63.2023 -7.401 63.2572 -7.2757 63.2772 -7.1757</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.2772 -7.1757 63.3597 -6.6893 63.3032 -7.0757 63.3397 -6.6993</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.3397 -6.6993 63.4419 -6.2062 63.3797 -6.6693 63.4319 -6.4062</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.4319 -6.4062 63.5236 -5.7283 63.4819 -6.0062 63.5036 -5.5283</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                      </gml:segments>
+                    </gml:Curve>
+                  </gml:curveMember>
+                </gml:Ring>
+              </gml:exterior>
+            </gml:Polygon>
+          </gml:surfaceMember>
+          <gml:surfaceMember>
+            <gml:Polygon gml:id="pl-5">
+              <gml:exterior>
+                <gml:Ring>
+                  <gml:curveMember>
+                    <gml:Curve gml:id="curve-5">
+                      <gml:segments>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.1945 -7.6639 63.2023 -7.401 63.2572 -7.2757 63.2772 -7.1757</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.2772 -7.1757 63.3597 -6.6893 63.3032 -7.0757 63.3397 -6.6993</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.3397 -6.6993 63.4419 -6.2062 63.3797 -6.6693 63.4319 -6.4062</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.4319 -6.4062 63.5236 -5.7283 63.4819 -6.0062 63.5036 -5.5283</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                      </gml:segments>
+                    </gml:Curve>
+                  </gml:curveMember>
+                </gml:Ring>
+              </gml:exterior>
+            </gml:Polygon>
+          </gml:surfaceMember>
+          <gml:surfaceMember>
+            <gml:Polygon gml:id="pl-6">
+              <gml:exterior>
+                <gml:Ring>
+                  <gml:curveMember>
+                    <gml:Curve gml:id="curve-6">
+                      <gml:segments>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.1945 -7.6639 63.2023 -7.401 63.2572 -7.2757 63.2772 -7.1757</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.2772 -7.1757 63.3597 -6.6893 63.3032 -7.0757 63.3397 -6.6993</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.3397 -6.6993 63.4419 -6.2062 63.3797 -6.6693 63.4319 -6.4062</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true" numDerivativesAtStart="1" numDerivativesAtEnd="1">
+                          <gml:posList>63.4319 -6.4062 63.5236 -5.7283 63.4819 -6.0062 63.5036 -5.5283</gml:posList>
+                          <gml:degree>3</gml:degree>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>0.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>
+                          <gml:knot>
+                            <gml:Knot>
+                              <gml:value>1.0</gml:value>
+                              <gml:multiplicity>4</gml:multiplicity>
+                              <gml:weight>1.0</gml:weight>
+                            </gml:Knot>
+                          </gml:knot>                          
+                        </gml:Bezier>
+                      </gml:segments>
+                    </gml:Curve>
+                  </gml:curveMember>
+                </gml:Ring>
+              </gml:exterior>
+            </gml:Polygon>
+          </gml:surfaceMember>          
+        </gml:MultiSurface>        
+      </txtfct:controlSurface>
+     
+      <txtfct:effectiveFrom>2012-11-17T09:00:00Z</txtfct:effectiveFrom>
+      <txtfct:effectiveUntil>2012-11-17T12:00:00Z</txtfct:effectiveUntil>          
+      <txtfct:severity codeSpace="fmi-weather-warning-severity-levels-traffic-2012-11-15">level-2</txtfct:severity>                        
+      <txtfct:causes codeSpace="fmi-weather-warning-causes-traffic-2012-11-15">snow</txtfct:causes>
+
+      <!-- In reality at FMI this probability is only given for precautionary warnings -->
+      <txtfct:actualizationProbability>0.75</txtfct:actualizationProbability>
+      
+      <txtfct:relatedMeteorologicalInfo 
+        xlink:href="#snowfall-1" 
+        xlink:arcrole="http://catalog.fmi.fi/woml/relationship/complement" 
+        xlink:title="Complementary meteorological information"/>
+
+    </txtfct:SevereWeatherWarning>
+    
+  </woml:member>
+  
+  <woml:member>
+    <womlqty:ParameterValueSetArea gml:id="snowfall-1">
+      <woml:creationTime>2012-11-16T15:59:00Z</woml:creationTime>
+      <!-- This is the predicted area of heavy snow fall. It may or may not be exactly the same
+      area that warning is given to. -->
+      <woml:controlSurface>       
+        <gml:Polygon gml:id="pl-7" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:posList></gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+      </woml:controlSurface>
+      <womlqty:parameterValueSet>
+        <womlqty:GeophysicalParameterValueSet gml:id="pvs-1">
+          <womlqty:parameterValue>
+            <womlqty:GeophysicalParameterValue gml:id="gpv-1">
+              <womlqty:parameter>
+                <womlqty:GeophysicalParameter gml:id="param-1">
+                  <womlqty:reference scheme="fmi">snowfall</womlqty:reference>                  
+                </womlqty:GeophysicalParameter>
+              </womlqty:parameter>
+              <womlqty:value>
+                <womlqty:NumericalValueRangeMeasure gml:id="nwr-1">
+                  <womlqty:numericalValueLowerLimit uom="mm/h">10</womlqty:numericalValueLowerLimit>
+                  <womlqty:numericalValueUpperLimit uom="mm/h">25</womlqty:numericalValueUpperLimit>
+                </womlqty:NumericalValueRangeMeasure>
+              </womlqty:value>
+            </womlqty:GeophysicalParameterValue>
+          </womlqty:parameterValue>
+        </womlqty:GeophysicalParameterValueSet>
+      </womlqty:parameterValueSet>
+    </womlqty:ParameterValueSetArea>
+  </woml:member>
+  
+  <woml:member>
+    <womlqty:ParameterValueSetArea gml:id="wind-1">
+      <woml:creationTime>2012-11-16T15:59:00Z</woml:creationTime>
+      <!-- This is the predicted area of the strong wind -->
+      <woml:controlSurface>       
+        <gml:Polygon gml:id="p" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:posList></gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+      </woml:controlSurface>
+      <womlqty:parameterValueSet>
+        <womlqty:GeophysicalParameterValueSet gml:id="pvs-2">
+          <womlqty:parameterValue>
+            <womlqty:GeophysicalParameterValue gml:id="gpv-2">
+              <womlqty:parameter>
+                <womlqty:GeophysicalParameter gml:id="param-2">
+                  <womlqty:reference scheme="fmi">windspeed</womlqty:reference>
+                  <womlqty:aggregation>
+                    <woml:TimeAggregation gml:id="tr-1">
+                      <woml:function>avg</woml:function>
+                      <woml:aggregationTime unit="minute">10</woml:aggregationTime>
+                    </woml:TimeAggregation>
+                  </womlqty:aggregation>                  
+                </womlqty:GeophysicalParameter>
+              </womlqty:parameter>
+              <womlqty:value>
+                <womlqty:NumericalValueRangeMeasure gml:id="nwr-2">
+                  <womlqty:numericalValueLowerLimit uom="m/s">12</womlqty:numericalValueLowerLimit>
+                  <womlqty:numericalValueUpperLimit uom="m/s">15</womlqty:numericalValueUpperLimit>
+                </womlqty:NumericalValueRangeMeasure>
+              </womlqty:value>
+            </womlqty:GeophysicalParameterValue>
+          </womlqty:parameterValue>
+          <womlqty:parameterValue>
+            <womlqty:GeophysicalParameterValue gml:id="gpv-3">
+              <womlqty:parameter>
+                <womlqty:GeophysicalParameter gml:id="param-3">
+                  <womlqty:reference scheme="fmi">windspeed-gust</womlqty:reference>                  
+                </womlqty:GeophysicalParameter>
+              </womlqty:parameter>
+              <womlqty:value>
+                <womlqty:NumericalValueRangeMeasure gml:id="nwr-3">
+                  <womlqty:numericalValueLowerLimit uom="m/s">14</womlqty:numericalValueLowerLimit>
+                  <womlqty:numericalValueUpperLimit uom="m/s">20</womlqty:numericalValueUpperLimit>
+                </womlqty:NumericalValueRangeMeasure>
+              </womlqty:value>
+            </womlqty:GeophysicalParameterValue>
+          </womlqty:parameterValue>
+          <womlqty:parameterValue>
+            <womlqty:GeophysicalParameterValue gml:id="gpv-4">
+              <womlqty:parameter>
+                <womlqty:GeophysicalParameter gml:id="param-4">
+                  <womlqty:reference scheme="fmi">winddirection</womlqty:reference>                  
+                </womlqty:GeophysicalParameter>
+              </womlqty:parameter>
+              <womlqty:value>
+                <womlqty:FlowDirectionMeasure gml:id="fdm-1">
+                  <womlqty:direction>                    
+                    <gml:CompassPoint>NNW</gml:CompassPoint>
+                  </womlqty:direction>
+                </womlqty:FlowDirectionMeasure>               
+              </womlqty:value>
+            </womlqty:GeophysicalParameterValue>
+          </womlqty:parameterValue>
+        </womlqty:GeophysicalParameterValueSet>
+      </womlqty:parameterValueSet>
+    </womlqty:ParameterValueSetArea>
+  </woml:member>
+  
+  <woml:member>
+    <womlqty:ParameterValueSetArea gml:id="road-freezing-1">
+      <woml:creationTime>2012-11-16T15:59:00Z</woml:creationTime>
+      <!-- The predicted area of freezing roads (temperature between -4..+2) -->
+      <woml:controlSurface>       
+        <gml:Polygon gml:id="pl-8" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:posList></gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+      </woml:controlSurface>
+      <womlqty:parameterValueSet>
+        <womlqty:GeophysicalParameterValueSet gml:id="pvs-3">
+          <womlqty:parameterValue>
+            <womlqty:GeophysicalParameterValue gml:id="gpv-5">
+              <womlqty:parameter>
+                <womlqty:GeophysicalParameter gml:id="param-5">
+                  <womlqty:reference scheme="fmi">road-temperature</womlqty:reference>                  
+                </womlqty:GeophysicalParameter>
+              </womlqty:parameter>
+              <womlqty:value>
+                <womlqty:NumericalValueRangeMeasure gml:id="nwr-4">
+                  <womlqty:numericalValueLowerLimit uom="C">-4</womlqty:numericalValueLowerLimit>
+                  <womlqty:numericalValueUpperLimit uom="C">2</womlqty:numericalValueUpperLimit>
+                </womlqty:NumericalValueRangeMeasure>
+              </womlqty:value>
+            </womlqty:GeophysicalParameterValue>
+          </womlqty:parameterValue>
+        </womlqty:GeophysicalParameterValueSet>
+      </womlqty:parameterValueSet>
+    </womlqty:ParameterValueSetArea>
+  </woml:member>
+  
+  <woml:creationTime>2012-11-16T15:20:00Z</woml:creationTime>
+  
+  <woml:longInfo xml:lang="fi-FI">Ajokeli muuttuu huonoksi illalla lumi- ja räntäsateen sekä tienpintojen jäätymisen vuoksi, ja eritäin huonoksi aamulla pöllyvän lumen vuoksi</woml:longInfo>
+  
+  <gml:validTime>
+    <gml:TimePeriod gml:id="time-1">
+      <gml:beginPosition>2012-11-16T18:00:00Z</gml:beginPosition>
+      <gml:endPosition>2012-11-17T12:00:00Z</gml:endPosition>
+    </gml:TimePeriod>
+  </gml:validTime>
+  
+  <woml:approval>
+    <woml:Approval gml:id="appr-1">
+      <woml:approvedBy>
+        <woml:Authority gml:id="auth-1">
+          <woml:authorityId>urn:auth:userid:fi:fmi:ldap:role:chiefofdesk</woml:authorityId>
+          <woml:localizedName xml:lang="fi-FI">Ilmatieteen laitos, päivystävä meteorologi</woml:localizedName>
+          <woml:localizedName xml:lang="en-UK">Finnish Meteorological Institute, Chief of Desk</woml:localizedName>
+        </woml:Authority>
+      </woml:approvedBy>
+      <woml:approvalTime>2012-11-16T16:45:30Z</woml:approvalTime>
+      <woml:approvedFor>general_public_usage</woml:approvedFor>
+    </woml:Approval>
+  </woml:approval>
+  <woml:envelopedSignature>
+    <!-- Note: This is not a valid signature for this document: -->
+    <dsig:Signature>
+      <dsig:SignedInfo>
+        <dsig:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+        <dsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#dsa-sha1"/>
+        <dsig:Reference URI="#fct-1">
+          <dsig:Transforms>
+            <dsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+          </dsig:Transforms>
+          <dsig:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+          <dsig:DigestValue>mo95+b184lAts/mjwd3Qo20fUiSmQF7qo2mJmKk9msE=</dsig:DigestValue>
+        </dsig:Reference>
+      </dsig:SignedInfo>
+      <dsig:SignatureValue>hhE6mpGB3xHZMegj22dM+BIb32J/MVveW4aZwr7GVrXLvYeJsrlZ0A==</dsig:SignatureValue>
+      <dsig:KeyInfo>
+        <dsig:X509Data>
+          <dsig:X509SubjectName>CN=test.user@organization.org,OU=Dev,O=Acme,L=Helsinki,ST=Uusimaa,C=FI</dsig:X509SubjectName>
+          <dsig:X509Certificate>MIIDIjCCAt+gAwIBAgIETnr6QTALBgcqhkjOOAQDBQAwdDELMAkGA1UEBhMCRkkxEDAOBgNVBAgT
+            B1V1c2ltYWExETAPBgNVBAcTCEhlbHNpbmtpMQ0wCwYDVQQKEwRBY21lMQwwCgYDVQQLEwNEZXYx
+            IzAhBgNVBAMMGnRlc3QudXNlckBvcmdhbml6YXRpb24ub3JnMB4XDTExMDkyMjA5MDUwNVoXDTE2
+            MDIwODA5MDUwNVowdDELMAkGA1UEBhMCRkkxEDAOBgNVBAgTB1V1c2ltYWExETAPBgNVBAcTCEhl
+            bHNpbmtpMQ0wCwYDVQQKEwRBY21lMQwwCgYDVQQLEwNEZXYxIzAhBgNVBAMMGnRlc3QudXNlckBv
+            cmdhbml6YXRpb24ub3JnMIIBtzCCASwGByqGSM44BAEwggEfAoGBAP1/U4EddRIpUt9KnC7s5Of2
+            EbdSPO9EAMMeP4C2USZpRV1AIlH7WT2NWPq/xfW6MPbLm1Vs14E7gB00b/JmYLdrmVClpJ+f6AR7
+            ECLCT7up1/63xhv4O1fnxqimFQ8E+4P208UewwI1VBNaFpEy9nXzrith1yrv8iIDGZ3RSAHHAhUA
+            l2BQjxUjC8yykrmCouuEC/BYHPUCgYEA9+GghdabPd7LvKtcNrhXuXmUr7v6OuqC+VdMCz0HgmdR
+            WVeOutRZT+ZxBxCBgLRJFnEj6EwoFhO3zwkyjMim4TwWeotUfI0o4KOuHiuzpnWRbqN/C/ohNWLx
+            +2J6ASQ7zKTxvqhRkImog9/hWuWfBpKLZl6Ae1UlZAFMO/7PSSoDgYQAAoGAby2+38h2rFABb4Nx
+            tnM5ILCa3bchHsEn/zs7CQy1XG13U2Gfp5FvyS/sPfgcmyMCZQ404lwBke7wLeYxNQMqEJJ450xO
+            3DJJzZfIwW375ybeRhvv1uk0UX7ljOJJ59gyZKVT/P+AOxpHgvqgSGkHkQTgc9/9WLNbr7ZPBGd+
+            3cMwCwYHKoZIzjgEAwUAAzAAMC0CFFGIAU2Kmar01vlraRiY9NkZHRtJAhUAhqosw9sJsefhV4yb
+            IzCy5+Vvbhk=</dsig:X509Certificate>
+        </dsig:X509Data>
+      </dsig:KeyInfo>
+    </dsig:Signature>
+  </woml:envelopedSignature>
+ 
+  <woml:targetRegion xlink:href="fi-warn-regions-2012-11-15.xml#reg-finland"/>
+  <woml:forecastTime>2012-11-16T17:00:00Z</woml:forecastTime>
+  
+  <txtfct:warningType codeSpace="fmi-weather-warning-types-2012-11-15">regular-warning</txtfct:warningType>
+  <txtfct:warningContext codeSpace="fmi-weather-textforecast-contexts-2012-11-15">traffic-weather</txtfct:warningContext>
+  <txtfct:audience codeSpace="fmi-weather-textforecast-audiences-2012-11-15">general-public</txtfct:audience>
+  
+</txtfct:SevereWeatherForecast>

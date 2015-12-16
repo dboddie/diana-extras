@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<womlswo:ColdFront
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:womlcore="http://xml.fmi.fi/namespace/woml/core/2011/11/15"
+    xmlns:womlswo="http://xml.fmi.fi/namespace/woml/swo/2011/11/15"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://xml.fmi.fi/namespace/woml/swo/2011/11/15 http://xml.fmi.fi/schema/woml/swo/2011/11/15/woml-swo.xsd"
+    gml:id="front-1">   
+    <gml:boundedBy>
+        <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+            <!-- lat, lon -->
+            <gml:lowerCorner>63.1945 -7.6639</gml:lowerCorner>
+            <gml:upperCorner>69.6897 11.3687</gml:upperCorner>
+        </gml:Envelope>
+    </gml:boundedBy>
+    <gml:validTime>
+        <gml:TimePeriod gml:id="time-id359506">
+            <gml:beginPosition>2009-02-02T12:00:00Z</gml:beginPosition>
+            <gml:endPosition>2009-02-03T12:00:00Z</gml:endPosition>
+        </gml:TimePeriod>
+    </gml:validTime>
+    <womlcore:creationTime>2009-02-01T12:44:30Z</womlcore:creationTime>
+    <womlcore:latestModificationTime >2009-02-01T12:44:30Z</womlcore:latestModificationTime>
+    <womlcore:shortInfo xml:lang="FI-fi">Kylmä rintama</womlcore:shortInfo>
+    <womlcore:shortInfo xml:lang="EN-en">A cold front</womlcore:shortInfo>
+    <womlcore:longInfo xml:lang="FI-fi">Kuvausta koskien tätä kylmää rintamaa</womlcore:longInfo>
+    <womlcore:longInfo xml:lang="EN-en">A description about this cold front</womlcore:longInfo>
+    <womlcore:controlCurve>
+        <gml:Curve gml:id="curve-1" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+            <gml:segments>
+                <gml:Bezier interpolation="polynomialSpline" isPolynomial="true">
+                    <!-- lat lon lat lon ... lat lon-->
+                    <gml:posList>63.1945 -7.6639 63.2023 -7.401 63.2572 -7.2757 63.2772 -7.1757</gml:posList>
+                    <gml:degree>3</gml:degree>
+                    <gml:knot>
+                        <gml:Knot>
+                            <gml:value>1.0</gml:value>
+                            <gml:multiplicity>4</gml:multiplicity>
+                            <gml:weight>1.0</gml:weight>
+                        </gml:Knot>
+                    </gml:knot>
+                    <gml:knot>
+                        <gml:Knot>
+                            <gml:value>2.0</gml:value>
+                            <gml:multiplicity>4</gml:multiplicity>
+                            <gml:weight>1.0</gml:weight>
+                        </gml:Knot>
+                    </gml:knot>                   
+                </gml:Bezier>
+                <gml:Bezier interpolation="polynomialSpline" isPolynomial="true">
+                    <gml:posList>63.2772 -7.1757 63.3597 -6.6893 63.3032 -7.0757 63.3397 -6.6993</gml:posList>
+                    <gml:degree>3</gml:degree>
+                    <gml:knot>
+                        <gml:Knot>
+                            <gml:value>1.0</gml:value>
+                            <gml:multiplicity>4</gml:multiplicity>
+                            <gml:weight>1.0</gml:weight>
+                        </gml:Knot>
+                    </gml:knot>
+                    <gml:knot>
+                        <gml:Knot>
+                            <gml:value>2.0</gml:value>
+                            <gml:multiplicity>4</gml:multiplicity>
+                            <gml:weight>1.0</gml:weight>
+                        </gml:Knot>
+                    </gml:knot>                   
+                </gml:Bezier>
+                <gml:Bezier interpolation="polynomialSpline" isPolynomial="true">
+                    <gml:posList>63.3397 -6.6993 63.4419 -6.2062 63.3797 -6.6693 63.4319 -6.4062</gml:posList>
+                    <gml:degree>3</gml:degree>
+                    <gml:knot>
+                        <gml:Knot>
+                            <gml:value>1.0</gml:value>
+                            <gml:multiplicity>4</gml:multiplicity>
+                            <gml:weight>1.0</gml:weight>
+                        </gml:Knot>
+                    </gml:knot>
+                    <gml:knot>
+                        <gml:Knot>
+                            <gml:value>2.0</gml:value>
+                            <gml:multiplicity>4</gml:multiplicity>
+                            <gml:weight>1.0</gml:weight>
+                        </gml:Knot>
+                    </gml:knot>                   
+                </gml:Bezier>
+                <gml:Bezier interpolation="polynomialSpline" isPolynomial="true">
+                    <gml:posList>63.4319 -6.4062 63.5236 -5.7283 63.4819 -6.0062 63.5036 -5.5283</gml:posList>
+                    <gml:degree>3</gml:degree>
+                    <gml:knot>
+                        <gml:Knot>
+                            <gml:value>1.0</gml:value>
+                            <gml:multiplicity>4</gml:multiplicity>
+                            <gml:weight>1.0</gml:weight>
+                        </gml:Knot>
+                    </gml:knot>
+                    <gml:knot>
+                        <gml:Knot>
+                            <gml:value>2.0</gml:value>
+                            <gml:multiplicity>4</gml:multiplicity>
+                            <gml:weight>1.0</gml:weight>
+                        </gml:Knot>
+                    </gml:knot>                   
+                </gml:Bezier>
+            </gml:segments>
+        </gml:Curve>            
+    </womlcore:controlCurve>
+</womlswo:ColdFront>

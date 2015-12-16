@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+  targetNamespace="http://xml.fmi.fi/namespace/woml/textfct/2012/11/15"
+  xmlns:womltxtfct="http://xml.fmi.fi/namespace/woml/textfct/2012/11/15"
+  xmlns:womlcore="http://xml.fmi.fi/namespace/woml/core/2012/11/15"
+  xmlns="http://www.w3.org/2001/XMLSchema" 
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:sch="http://www.ascc.net/xml/schematron" 
+  elementFormDefault="qualified" 
+  version="1.0">
+  
+  <annotation>
+    <appinfo>
+      <sch:title>Schematron validation</sch:title>
+      <sch:ns prefix="xlink" uri="http://www.w3.org/1999/xlink" />
+      <sch:pattern name="Check either href or content not both">
+        <sch:rule abstract="true" id="hrefOrContent">
+          <sch:report test="@xlink:href and (*|text())"
+            >Property element may not carry both a reference to an object and contain an object.</sch:report>
+          <sch:assert test="@xlink:href | (*|text())"
+            >Property element must either carry a reference to an object or contain an object.</sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </appinfo>
+    <documentation>
+      Severe weather warnings forecast object objects as GML 3.2 Features.                
+      Author: Ilkka Rinne / Spatineo Inc. 2012
+    </documentation>
+  </annotation>
+  
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd" />   
+  <import namespace="http://xml.fmi.fi/namespace/woml/core/2012/11/15" schemaLocation="http://xml.fmi.fi/schema/woml/core/2012/11/15/woml-core.xsd" />
+  
+  <!-- ======================================================================================================== -->
+  <element name="SevereWeatherForecast" type="womltxtfct:SevereWeatherForecastType"
+    substitutionGroup="womlcore:WeatherForecast" />
+  <!-- ======================================================================================================== -->
+  
+  <complexType name="SevereWeatherForecastType">
+    <annotation>
+      <documentation>
+        Main container for severe weather warning objects for one warningType, one warningContext,
+        for specified target region and time span.
+      </documentation>
+    </annotation>
+    <complexContent>
+      <extension base="womlcore:WeatherForecastType">
+        <sequence>
+          <element name="warningType" type="gml:CodeType"/>
+          <element name="warningContext" type="gml:CodeType" minOccurs="0" maxOccurs="1"/>                                           
+          <element name="audience" type="gml:CodeType" minOccurs="0" maxOccurs="unbounded"/>           
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  
+  <!-- ========================================================================================== -->
+  <element name="SevereWeatherWarning" type="womltxtfct:SevereWeatherWarningType"
+    substitutionGroup="womlcore:AbstractMeteorologicalObject" />
+  <!-- ========================================================================================== -->
+  <complexType name="SevereWeatherWarningType">
+    <annotation>
+      <documentation>
+        
+      </documentation>
+    </annotation>
+    <complexContent>
+      <extension base="womlcore:AbstractMeteorologicalObjectType">
+        <sequence>
+          <element name="controlSurface" type="gml:MultiSurfacePropertyType" />                              
+          <element name="targetRegion" type="womlcore:GeographicRegionPropertyType"
+              minOccurs="0" maxOccurs="unbounded" />                              
+          <element name="effectiveFrom" type="dateTime"/>
+          <element name="effectiveUntil" type="dateTime" minOccurs="0"/>
+          <element name="severity" type="gml:CodeType" minOccurs="1" maxOccurs="unbounded"/>
+          <element name="causes" type="gml:CodeListType" minOccurs="0" />
+          <element name="actualizationProbability" type="womlcore:percentageType" minOccurs="0" />
+          <element name="relatedMeteorologicalInfo" type="womlcore:MeteorologicalObjectPropertyType" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  <!-- ========================================================================================== -->
+  <element name="severeWeatherWarningAreaProperty" type="womltxtfct:SevereWeatherWarningAreaPropertyType" />
+  <!-- ========================================================================================== -->
+  <complexType name="SevereWeatherWarningAreaPropertyType">
+    <annotation>
+      <documentation>To be used when using this object type as property of n GML object
+        type according to the GML object-property-association model (it is not allowed for
+        GML Objects to contain other GML Objects as direct children). Enables referencing to
+        an existing object using xlink:href attribute.</documentation>
+    </annotation>
+    
+    <sequence minOccurs="0">
+      <element ref="womltxtfct:SevereWeatherWarning" />
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup" />
+  </complexType>
+  
+  
+</schema>

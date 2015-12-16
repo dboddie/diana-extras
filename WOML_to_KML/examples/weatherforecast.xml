@@ -1,0 +1,333 @@
+<womlcore:WeatherForecast
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:dsig="http://www.w3.org/2000/09/xmldsig#"
+    xmlns:womlcore="http://xml.fmi.fi/namespace/woml/core/2011/11/15"
+    xmlns:womlswo="http://xml.fmi.fi/namespace/woml/swo/2011/11/15"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://xml.fmi.fi/namespace/woml/swo/2011/11/15 http://xml.fmi.fi/schema/woml/swo/2011/11/15/woml-swo.xsd"
+    gml:id="fct-1">
+    <gml:boundedBy>
+        <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+            <!-- lat, lon -->
+            <gml:lowerCorner>63.1945 -7.6639</gml:lowerCorner>
+            <gml:upperCorner>69.6897 11.3687</gml:upperCorner>
+        </gml:Envelope>
+    </gml:boundedBy>
+    <womlcore:member>
+        <womlswo:ColdFront gml:id="front-1">
+            <gml:boundedBy>
+                <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                    <!-- lat, lon -->
+                    <gml:lowerCorner>63.1945 -7.6639</gml:lowerCorner>
+                    <gml:upperCorner>69.6897 11.3687</gml:upperCorner>
+                </gml:Envelope>
+            </gml:boundedBy>
+            <gml:validTime>
+                <gml:TimePeriod gml:id="time-2">
+                    <gml:beginPosition>2009-02-02T12:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2009-02-03T12:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </gml:validTime>
+            <womlcore:creationTime>2009-02-01T12:44:30Z</womlcore:creationTime>
+            <womlcore:latestModificationTime>2009-02-01T12:44:30Z</womlcore:latestModificationTime>
+            <womlcore:shortInfo xml:lang="FI-fi">Kylmä rintama</womlcore:shortInfo>
+            <womlcore:shortInfo xml:lang="EN-en">A cold front</womlcore:shortInfo>
+            <womlcore:longInfo xml:lang="FI-fi">Kuvausta koskien tätä kylmää rintamaa</womlcore:longInfo>
+            <womlcore:longInfo xml:lang="EN-en">A description about this cold front</womlcore:longInfo>
+            <womlcore:controlCurve>
+                <gml:Curve gml:id="curve-1" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                    <gml:segments>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true">
+                            <!-- lat lon lat lon ... lat lon-->
+                            <gml:posList>63.1945 -7.6639 63.2023 -7.401 63.2572 -7.2757 63.2772 -7.1757</gml:posList>
+                            <gml:degree>3</gml:degree>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>1.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>2.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true">
+                            <gml:posList>63.2772 -7.1757 63.3597 -6.6893 63.3032 -7.0757 63.3397 -6.6993</gml:posList>
+                            <gml:degree>3</gml:degree>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>1.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>2.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true">
+                            <gml:posList>63.3397 -6.6993 63.4419 -6.2062 63.3797 -6.6693 63.4319 -6.4062</gml:posList>
+                            <gml:degree>3</gml:degree>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>1.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>2.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true">
+                            <gml:posList>63.4319 -6.4062 63.5236 -5.7283 63.4819 -6.0062 63.5036 -5.5283</gml:posList>
+                            <gml:degree>3</gml:degree>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>1.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>2.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                        </gml:Bezier>
+                    </gml:segments>
+                </gml:Curve>
+            </womlcore:controlCurve>
+            <womlcore:endPointConnectsTo xlink:href="#sharedpoint-1"/>
+        </womlswo:ColdFront>
+    </womlcore:member>
+    <womlcore:member>
+        <womlswo:WarmFront gml:id="front-2">
+            <gml:boundedBy>
+                <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                    <!-- lat, lon -->
+                    <gml:lowerCorner>63.1945 -7.6639</gml:lowerCorner>
+                    <gml:upperCorner>69.6897 11.3687</gml:upperCorner>
+                </gml:Envelope>
+            </gml:boundedBy>
+            <gml:validTime>
+                <gml:TimePeriod gml:id="time-3">
+                    <gml:beginPosition>2009-02-02T12:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2009-02-03T12:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </gml:validTime>
+            <womlcore:creationTime>2009-02-01T12:44:30Z</womlcore:creationTime>
+            <womlcore:latestModificationTime>2009-02-01T12:44:30Z</womlcore:latestModificationTime>
+            <womlcore:shortInfo xml:lang="FI-fi">lämmin rintama</womlcore:shortInfo>
+            <womlcore:shortInfo xml:lang="EN-en">A warm front</womlcore:shortInfo>
+            <womlcore:longInfo xml:lang="FI-fi">Kuvausta koskien tätä lämmintä rintamaa</womlcore:longInfo>
+            <womlcore:longInfo xml:lang="EN-en">A description about this warm front</womlcore:longInfo>
+            <womlcore:controlCurve>
+                <gml:Curve gml:id="curve-2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                    <gml:segments>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true">
+                            <!-- lat lon lat lon ... lat lon-->
+                            <gml:posList>63.1945 -7.6639 63.2023 -7.401 63.2572 -7.2757 63.2772 -7.1757</gml:posList>
+                            <gml:degree>3</gml:degree>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>1.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>2.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true">
+                            <gml:posList>63.2772 -7.1757 63.3597 -6.6893 63.3032 -7.0757 63.3397 -6.6993</gml:posList>
+                            <gml:degree>3</gml:degree>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>1.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>2.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true">
+                            <gml:posList>63.3397 -6.6993 63.4419 -6.2062 63.3797 -6.6693 63.4319 -6.4062</gml:posList>
+                            <gml:degree>3</gml:degree>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>1.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>2.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                        </gml:Bezier>
+                        <gml:Bezier interpolation="polynomialSpline" isPolynomial="true">
+                            <gml:posList>63.4319 -6.4062 63.5236 -5.7283 63.4819 -6.0062 63.5036 -5.5283</gml:posList>
+                            <gml:degree>3</gml:degree>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>1.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                            <gml:knot>
+                                <gml:Knot>
+                                    <gml:value>2.0</gml:value>
+                                    <gml:multiplicity>4</gml:multiplicity>
+                                    <gml:weight>1.0</gml:weight>
+                                </gml:Knot>
+                            </gml:knot>
+                        </gml:Bezier>
+                    </gml:segments>
+                </gml:Curve>
+            </womlcore:controlCurve>
+            <womlcore:startPointConnectsTo xlink:href="#sharedpoint-1"/>
+        </womlswo:WarmFront>
+    </womlcore:member>   
+    <womlcore:creationTime>2009-02-01T12:44:30Z</womlcore:creationTime>
+    <womlcore:sharedObjects>
+        <womlcore:ConnectionPoint srsName="http://www.opengis.net/def/crs/EPSG/0/4326" gml:id="sharedpoint-1">
+            <gml:pos>63.1945 -7.6639</gml:pos>
+        </womlcore:ConnectionPoint>
+        <womlcore:GeographicRegion gml:id="reg-europe">
+            <gml:name codeSpace="urn:metobject:gml:fi:fmi:region">europe</gml:name>
+            <gml:boundedBy>
+                <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                    <gml:lowerCorner>34.1917491721098 -24.1338947041854</gml:lowerCorner>
+                    <gml:upperCorner>71.35072212813091 39.78580791587787</gml:upperCorner>
+                </gml:Envelope>
+            </gml:boundedBy>
+            <womlcore:boundary>
+                <gml:LinearRing>
+                    <gml:posList>
+                        34.24498197434621 9.907156299072678
+                        34.51123360972705 20.91411541572156
+                        34.84399197428478 28.91398254351208
+                        35.78523540245252 39.13972716588274
+                        46.66562709842991 39.78580791587787
+                        52.54969759578679 39.57428351584159
+                        60.77045575689296 39.14516931261758
+                        65.79704048111873 39.21442795709487
+                        71.17743726389149 39.44418201342263
+                        71.35072212813091 33.52245369657199
+                        70.90376493838633 15.67018961817616
+                        70.32506815741047 -4.709782837749419
+                        70.06004400795291 -22.23966088401448
+                        64.55757017123533 -24.1338947041854
+                        34.1917491721098 -21.23173183402058
+                        34.24498197434621 9.907156299072678
+                    </gml:posList>
+                </gml:LinearRing>
+            </womlcore:boundary>
+            <womlcore:regionId scheme="urn:someauthority:worldregion">europe</womlcore:regionId>
+            <womlcore:localizedName xml:lang="FI-fi">Eurooppa</womlcore:localizedName>
+            <womlcore:localizedName xml:lang="EN-en">Europe</womlcore:localizedName>
+            <womlcore:localizedName xml:lang="SE-sv">Europa</womlcore:localizedName>
+        </womlcore:GeographicRegion>
+    </womlcore:sharedObjects>
+    <gml:validTime>
+        <gml:TimePeriod gml:id="time-1">
+            <gml:beginPosition>2009-02-02T12:00:00Z</gml:beginPosition>
+            <gml:endPosition>2009-02-03T12:00:00Z</gml:endPosition>
+        </gml:TimePeriod>
+    </gml:validTime>
+    <womlcore:approval>
+        <womlcore:Approval gml:id="appr-1">
+            <womlcore:approvedBy>
+                <womlcore:Authority gml:id="auth-1">
+                    <womlcore:authorityId>urn:auth:userid:fi:fmi:ldap:role:chiefofdesk</womlcore:authorityId>
+                    <womlcore:localizedName xml:lang="fi-FI">Ilmatieteen laitos, päivystävä meteorologi</womlcore:localizedName>
+                    <womlcore:localizedName xml:lang="en-US">Finnish Meteorological Institute, Chief of Desk</womlcore:localizedName>
+                </womlcore:Authority>
+            </womlcore:approvedBy>
+            <womlcore:approvalTime>2009-02-01T12:44:30Z</womlcore:approvalTime>
+            <womlcore:approvedFor>general_public_usage</womlcore:approvedFor>
+        </womlcore:Approval>
+    </womlcore:approval>
+    <womlcore:envelopedSignature>
+        <dsig:Signature>
+            <dsig:SignedInfo>
+                <dsig:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                <dsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#dsa-sha1"/>
+                <dsig:Reference URI="#fct-1">
+                    <dsig:Transforms>
+                        <dsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </dsig:Transforms>
+                    <dsig:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <dsig:DigestValue>mo95+b184lAts/mjwd3Qo20fUiSmQF7qo2mJmKk9msE=</dsig:DigestValue>
+                </dsig:Reference>
+            </dsig:SignedInfo>
+            <dsig:SignatureValue>hhE6mpGB3xHZMegj22dM+BIb32J/MVveW4aZwr7GVrXLvYeJsrlZ0A==</dsig:SignatureValue>
+            <dsig:KeyInfo>
+                <dsig:X509Data>
+                    <dsig:X509SubjectName>CN=test.user@organization.org,OU=Dev,O=Acme,L=Helsinki,ST=Uusimaa,C=FI</dsig:X509SubjectName>
+                    <dsig:X509Certificate>MIIDIjCCAt+gAwIBAgIETnr6QTALBgcqhkjOOAQDBQAwdDELMAkGA1UEBhMCRkkxEDAOBgNVBAgT
+                        B1V1c2ltYWExETAPBgNVBAcTCEhlbHNpbmtpMQ0wCwYDVQQKEwRBY21lMQwwCgYDVQQLEwNEZXYx
+                        IzAhBgNVBAMMGnRlc3QudXNlckBvcmdhbml6YXRpb24ub3JnMB4XDTExMDkyMjA5MDUwNVoXDTE2
+                        MDIwODA5MDUwNVowdDELMAkGA1UEBhMCRkkxEDAOBgNVBAgTB1V1c2ltYWExETAPBgNVBAcTCEhl
+                        bHNpbmtpMQ0wCwYDVQQKEwRBY21lMQwwCgYDVQQLEwNEZXYxIzAhBgNVBAMMGnRlc3QudXNlckBv
+                        cmdhbml6YXRpb24ub3JnMIIBtzCCASwGByqGSM44BAEwggEfAoGBAP1/U4EddRIpUt9KnC7s5Of2
+                        EbdSPO9EAMMeP4C2USZpRV1AIlH7WT2NWPq/xfW6MPbLm1Vs14E7gB00b/JmYLdrmVClpJ+f6AR7
+                        ECLCT7up1/63xhv4O1fnxqimFQ8E+4P208UewwI1VBNaFpEy9nXzrith1yrv8iIDGZ3RSAHHAhUA
+                        l2BQjxUjC8yykrmCouuEC/BYHPUCgYEA9+GghdabPd7LvKtcNrhXuXmUr7v6OuqC+VdMCz0HgmdR
+                        WVeOutRZT+ZxBxCBgLRJFnEj6EwoFhO3zwkyjMim4TwWeotUfI0o4KOuHiuzpnWRbqN/C/ohNWLx
+                        +2J6ASQ7zKTxvqhRkImog9/hWuWfBpKLZl6Ae1UlZAFMO/7PSSoDgYQAAoGAby2+38h2rFABb4Nx
+                        tnM5ILCa3bchHsEn/zs7CQy1XG13U2Gfp5FvyS/sPfgcmyMCZQ404lwBke7wLeYxNQMqEJJ450xO
+                        3DJJzZfIwW375ybeRhvv1uk0UX7ljOJJ59gyZKVT/P+AOxpHgvqgSGkHkQTgc9/9WLNbr7ZPBGd+
+                        3cMwCwYHKoZIzjgEAwUAAzAAMC0CFFGIAU2Kmar01vlraRiY9NkZHRtJAhUAhqosw9sJsefhV4yb
+                        IzCy5+Vvbhk=</dsig:X509Certificate>
+                </dsig:X509Data>
+            </dsig:KeyInfo>
+        </dsig:Signature>
+    </womlcore:envelopedSignature>
+    <womlcore:targetRegion xlink:href="#reg-europe"/>
+    <womlcore:forecastTime>2009-02-01T12:44:30Z</womlcore:forecastTime>
+    <womlcore:usedReferenceData>
+        <womlcore:NumericalModelRunForecastReference gml:id="modelrun-1">
+            <womlcore:targetRegion xlink:href="#reg-europe"/>              
+            <womlcore:analysisTime>2009-02-01T00:00:00Z</womlcore:analysisTime>
+            <womlcore:model>
+                <womlcore:NumericalWeatherModel gml:id="model-1">
+                    <womlcore:modelIdentifier>Hirlam</womlcore:modelIdentifier>
+                    <womlcore:specifier>RCR</womlcore:specifier>
+                </womlcore:NumericalWeatherModel>
+            </womlcore:model>
+        </womlcore:NumericalModelRunForecastReference>
+    </womlcore:usedReferenceData>
+</womlcore:WeatherForecast>
